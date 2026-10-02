@@ -1,4 +1,4 @@
-# fluig-viagens-app-min
+# fluig-viagens-app
 
 Projeto-base usado no codelab para demonstrar um fluxo simples de desenvolvimento com Fluig,
 teste automatizado de dataset e pipeline de CI/CD no GitHub Actions.
@@ -24,7 +24,7 @@ passo, como:
 ## Estrutura atual do projeto
 
 ```text
-fluig-viagens-app-min/
+fluig-viagens-app/
 ├── datasets/
 │   └── ds-viagens-paises.js
 ├── tests/
