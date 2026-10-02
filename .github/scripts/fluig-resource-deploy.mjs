@@ -29,11 +29,12 @@ async function main() {
 
   // CHAMADAS DE COMANDO DO FLUIG CLI
 
+  //COLE AQUI
 
   //FIM  CHAMADAS DE COMANDO DO FLUIG CLI
 
-  }
-  
+}
+
 // Lê a configuração mínima do projeto usada para montar o nome do servidor
 // e outros parâmetros auxiliares do deploy.
 async function readConfig() {
@@ -65,12 +66,11 @@ async function resolveDatasets() {
 // Varre recursivamente a pasta datasets e devolve caminhos relativos,
 // que são os formatos esperados pelo restante do script.
 
-  /**LISTAGEM DE DATASET
+// LISTAGEM DE DATASET
 
+//  CODE AQUI:
 
-  CODE AQUI:
-
-  LISTAGEM DE DATASET**/
+//  LISTAGEM DE DATASET
 
 // Aceita lista manual separada por quebra de linha ou vírgula,
 // mantendo apenas caminhos válidos de datasets JavaScript.

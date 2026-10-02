@@ -41,12 +41,11 @@ jobs:
 ##Fim Job de Testes
 
 
-
-##Condicional Job de Deploy
+##Job de Deploy
 
 ## Cole o trecho de código aqui
 
-##Fim Condicional Job de Deploy
+##Fim Job de Deploy
 
     steps:
       - name: Checkout
