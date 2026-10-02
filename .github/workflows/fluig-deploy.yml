@@ -1,0 +1,80 @@
+name: FLUIG-DEPLOY
+
+# Events definem em quais acontecimentos do GitHub Actions este workflow deve iniciar.
+# Neste arquivo:
+# - push: roda quando há envio de commits para o repositório, limitado pelos caminhos em `paths`
+# - pull_request: roda quando uma PR afeta esses mesmos caminhos
+# - workflow_dispatch: permite execução manual e aceita o input `dataset_paths`
+
+on:
+  push:
+    paths:
+      - "datasets/**"
+      - "tests/**"
+      - ".github/**"
+      - "fluig.json"
+      - "package.json"
+  pull_request:
+    paths:
+      - "datasets/**"
+      - "tests/**"
+      - ".github/**"
+      - "fluig.json"
+      - "package.json"
+  workflow_dispatch:
+    inputs:
+      dataset_paths:
+        description: Lista opcional de datasets, um por linha
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+
+##Job de testes
+
+## Cole o trecho de código aqui
+
+##Fim Job de Testes
+
+
+
+##Condicional Job de Deploy
+
+## Cole o trecho de código aqui
+
+##Fim Condicional Job de Deploy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+##Step descobrindo dataset que foram alterados
+
+## Cole o trecho de código aqui
+
+##Fim Step descobrindo dataset que foram alterados
+
+      - name: Encerrar sem deploy
+        if: steps.datasets.outputs.paths == ''
+        run: echo "Nenhum dataset alterado."
+
+      - name: Login no GHCR
+        if: steps.datasets.outputs.paths != ''
+        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+
+      - name: Baixar imagem do Fluig CLI
+        if: steps.datasets.outputs.paths != ''
+        run: docker pull ghcr.io/cardevisi/fluig-cli:0.1.0
+
+##Deploy dos datasets alterados
+
+## Cole o trecho de código aqui
+
+##Fim Deploy dos datasets alterados
