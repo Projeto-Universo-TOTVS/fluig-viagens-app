@@ -19,7 +19,6 @@ passo, como:
 - um teste automatizado em `tests/`;
 - um workflow de CI/CD em `.github/workflows/fluig-deploy.yml`;
 - um script de deploy em `.github/scripts/fluig-resource-deploy.mjs`;
-- um codelab em `docs/codelab-fluig-viagens-app.md`.
 
 ## Estrutura atual do projeto
 
@@ -45,7 +44,7 @@ fluig-viagens-app/
 Dataset de exemplo usado ao longo da aula. Ele devolve uma lista fixa de países e serve como base
 para explicar a estrutura de um dataset Fluig.
 
-### `tests/datasets.contract.test.js`
+### `tests/datasets.test.js`
 
 Teste automatizado que executa o dataset em sandbox e valida uma base reaproveitável de regras,
 como:
@@ -68,31 +67,6 @@ Workflow principal do projeto. Ele:
 ### `.github/scripts/fluig-resource-deploy.mjs`
 
 Script executado dentro do container para autenticar no Fluig CLI e publicar os datasets.
-
-### `docs/codelab-fluig-viagens-app.md`
-
-Material-base do codelab. É esse arquivo que explica o projeto para o aluno e gera a versão HTML
-publicada em `docs/reconstruindo-fluig-viagens-app/`.
-
-## Como acompanhar o codelab localmente
-
-Instale as dependências do projeto:
-
-```bash
-npm install
-```
-
-Para abrir o codelab localmente:
-
-```bash
-npm run codelab
-```
-
-Se quiser apenas gerar os arquivos do codelab:
-
-```bash
-npm run codelab:build
-```
 
 ## Como rodar os testes
 
@@ -149,6 +123,5 @@ os metadados básicos e o nome-base usado pelo CLI durante o deploy.
 
 ## Referências úteis
 
-- Codelab: `docs/codelab-fluig-viagens-app.md`
 - Workflow: `.github/workflows/fluig-deploy.yml`
 - Script de deploy: `.github/scripts/fluig-resource-deploy.mjs`
